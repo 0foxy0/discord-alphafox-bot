@@ -1,0 +1,117 @@
+{
+    "admin": [
+        {"name": "/social", "value": "Zeigt dir alle Links zu den jeweiligen Sozialen Medien und der Website!"},
+        {"name": "/vote", "value": "Zeigt dir den Vote Link für CityCrafting!"},
+        {"name": "/privatchat <spieler> <chatname>", "value": "Erstellt dir mit der getaggten Person und dem gegebenen Namen einen privaten Chat!"},
+        {"name": "/closechat", "value": "Gib diesen Command in dem privaten Chat ein den du löschen möchtest!"},
+        {"name": "/avatar (<spieler>)", "value": "Zeigt dir dein/sein Avatar und mit Rechtsklick hast du den Avatar-Link!"},
+        {"name": "/mcstats", "value": "Gibt dir Infos über den Server z.B. den Status etc."},
+        {"name": "/voicelimit <Zahl>", "value": "Limitiert die mögliche Spieler Anzahl deines Temp Channels!"},
+        {"name": "/rank (<spieler>)", "value": "Zeigt dir deine/seine Stats vom Discord!"},
+        {"name": "/leaderboard", "value": "Zeigt die Top 10 Chatter vom Discord Server!"},
+        {"name": "/clear <anzahl-der-nachrichten>", "value": "Löscht Nachrichten MAX 99!"},
+        {"name": "/mute <spieler> <dauer> <grund>", "value": "Stummt Spieler für die angegebene Zeit! Zeiten: 1s 1m 1h 1d 1w 1mo 1y"},
+        {"name": "/unmute <spieler>", "value": "Entstummt einen gestummten Spieler!"},
+        {"name": "/slowmode <zeit>", "value": "Gib diesen Command in dem Chat ein wo du Slowmode aktivieren möchtest! Zeiten: 1;0 | immer SEKUNDEN!"},
+        {"name": "/giveaway <chat> <dauer> <anzahl-der-gewinner> <gewinn>", "value": "Erstellt ein Giveaway im angegebenen Channel | Zeiten: 1s 1m 1h 1d 1w 1mo 1y"}
+    ],
+
+    "admin2": [
+        {"name": "/endgiveaway <giveaway-nachrichtenID>", "value": "Beendet das angegebene Giveaway sofort!"},
+        {"name": "/rerollgiveaway <giveaway-nachrichtenID>", "value": "Lost neue Gewinner für das angegebene Giveaway aus!"},
+        {"name": "/editgiveaway <giveaway-nachrichtenID> <+Zeit|-Zeit> <neue-gewinner-anzahl> <neuer-gewinn>", "value": "Ändert das angegebene Giveaway! Zeiten: 1 | immer SEKUNDEN!"},
+        {"name": "/deletegiveaway <giveaway-nachrichtenID>", "value": "Löscht das angegebene Giveaway komplett!"},
+        {"name": "/addrole <rolle>", "value": "Fügt eine Rolle zum Ticket hinzu!"},
+        {"name": "/adduser <spieler>", "value": "Fügt einen Spieler zum Ticket hinzu!"},
+        {"name": "/removerole <rolle>", "value": "Entfernt eine Rolle vom Ticket!"},
+        {"name": "/removeuser <spieler>", "value": "Entfernt einen Spieler vom Ticket!"},
+        {"name": "/ban <spieler> <grund>", "value": "Bannt einen Spieler vom Discord Server!"},
+        {"name": "/banlist", "value": "Sendet eine Liste von den gebannten Spielern!"},
+        {"name": "/unban <spielerID>", "value": "Entbannt einen gebannten Spieler vom Discord!"},
+        {"name": "/ping", "value": "Zeigt dir den Ping vom Bot!"}
+    ],
+
+    "admin3": [
+        {"name": "/send <spieler> <nachricht>", "value": "Sendet dem Spieler eine DM!"},
+        {"name": "/statsreset (<spieler>)", "value": "Setzt die Discord Stats von dir oder dem Spieler zurück!"},
+        {"name": "/twitch <streamer>", "value": "Erstellt eine Stream Benachrichtigung!"},
+        {"name": "/removetwitch <streamer>", "value": "Entfernt eine Stream Benachrichtigung!"},
+        {"name": "/notifications", "value": "Zeigt die Liste der Streamer die eine Benachrichtigung haben!"},
+        {"name": "/youtube <creator> <creatorid>", "value": "Erstellt eine Video Benachrichtigung!"},
+        {"name": "/removeyoutube <creator>", "value": "Entfernt eine Video Benachrichtigung!"},
+        {"name": "/creatorlist", "value": "Zeigt die Liste der Creator die eine Benachrichtigung haben!"},
+        {"name": "cc!ticket #chat @rollen", "value": "Erstellt die Nachricht um ein Ticket zu eröffnen!"},
+        {"name": "cc!regeln", "value": "Erstellt die Regel Nachricht!"}
+    ],
+
+    "ban": [
+        {"name": "/social", "value": "Zeigt dir alle Links zu den jeweiligen Sozialen Medien und der Website!"},
+        {"name": "/vote", "value": "Zeigt dir den Vote Link für CityCrafting!"},
+        {"name": "/privatchat <spieler> <chatname>", "value": "Erstellt dir mit der getaggten Person und dem gegebenen Namen einen privaten Chat!"},
+        {"name": "/closechat", "value": "Gib diesen Command in dem privaten Chat ein den du löschen möchtest!"},
+        {"name": "/avatar (<spieler>)", "value": "Zeigt dir dein/sein Avatar und mit Rechtsklick hast du den Avatar-Link!"},
+        {"name": "/mcstats", "value": "Gibt dir Infos über den Server z.B. den Status etc."},
+        {"name": "/voicelimit <Zahl>", "value": "Limitiert die mögliche Spieler Anzahl deines Temp Channels!"},
+        {"name": "/rank (<spieler>)", "value": "Zeigt dir deine/seine Stats vom Discord!"},
+        {"name": "/leaderboard", "value": "Zeigt die Top 10 Chatter vom Discord Server!"},
+        {"name": "/clear <anzahl-der-nachrichten>", "value": "Löscht Nachrichten MAX 99!"},
+        {"name": "/mute <spieler> <dauer> <grund>", "value": "Stummt Spieler für die angegebene Zeit! Zeiten: 1s 1m 1h 1d 1w 1mo 1y"},
+        {"name": "/unmute <spieler>", "value": "Entstummt einen gestummten Spieler!"},
+        {"name": "/slowmode <zeit>", "value": "Gib diesen Command in dem Chat ein wo du Slowmode aktivieren möchtest! Zeiten: 1;0 | immer SEKUNDEN!"},
+        {"name": "/giveaway <chat> <dauer> <anzahl-der-gewinner> <gewinn>", "value": "Erstellt ein Giveaway im angegebenen Channel | Zeiten: 1s 1m 1h 1d 1w 1mo 1y"}
+    ],
+
+    "ban2": [
+        {"name": "/endgiveaway <giveaway-nachrichtenID>", "value": "Beendet das angegebene Giveaway sofort!"},
+        {"name": "/rerollgiveaway <giveaway-nachrichtenID>", "value": "Lost neue Gewinner für das angegebene Giveaway aus!"},
+        {"name": "/editgiveaway <giveaway-nachrichtenID> <+Zeit|-Zeit> <neue-gewinner-anzahl> <neuer-gewinn>", "value": "Ändert das angegebene Giveaway! Zeiten: 1 | immer SEKUNDEN!"},
+        {"name": "/deletegiveaway <giveaway-nachrichtenID>", "value": "Löscht das angegebene Giveaway komplett!"},
+        {"name": "/addrole <rolle>", "value": "Fügt eine Rolle zum Ticket hinzu!"},
+        {"name": "/adduser <spieler>", "value": "Fügt einen Spieler zum Ticket hinzu!"},
+        {"name": "/removerole <rolle>", "value": "Entfernt eine Rolle vom Ticket!"},
+        {"name": "/removeuser <spieler>", "value": "Entfernt einen Spieler vom Ticket!"},
+        {"name": "/ban <spieler> <grund>", "value": "Bannt einen Spieler vom Discord Server!"},
+        {"name": "/banlist", "value": "Sendet eine Liste von den gebannten Spielern!"},
+        {"name": "/unban <spielerID>", "value": "Entbannt einen gebannten Spieler vom Discord!"}
+    ],
+
+    "manage": [
+        {"name": "/social", "value": "Zeigt dir alle Links zu den jeweiligen Sozialen Medien und der Website!"},
+        {"name": "/vote", "value": "Zeigt dir den Vote Link für CityCrafting!"},
+        {"name": "/privatchat <spieler> <chatname>", "value": "Erstellt dir mit der getaggten Person und dem gegebenen Namen einen privaten Chat!"},
+        {"name": "/closechat", "value": "Gib diesen Command in dem privaten Chat ein den du löschen möchtest!"},
+        {"name": "/avatar (<spieler>)", "value": "Zeigt dir dein/sein Avatar und mit Rechtsklick hast du den Avatar-Link!"},
+        {"name": "/mcstats", "value": "Gibt dir Infos über den Server z.B. den Status etc."},
+        {"name": "/voicelimit <zahl>", "value": "Limitiert die mögliche Spieler Anzahl deines Temp Channels!"},
+        {"name": "/rank (<spieler>)", "value": "Zeigt dir deine/seine Stats vom Discord!"},
+        {"name": "/leaderboard", "value": "Zeigt die Top 10 Chatter vom Discord Server!"},
+        {"name": "/clear <anzahl-der-nachrichten>", "value": "Löscht Nachrichten MAX 99!"},
+        {"name": "/mute <spieler> <dauer> <grund>", "value": "Stummt Spieler für die angegebene Zeit! Zeiten: 1s 1m 1h 1d 1w 1mo 1y"},
+        {"name": "/unmute <spieler>", "value": "Entstummt einen gestummten Spieler!"},
+        {"name": "/slowmode <zeit>", "value": "Gib diesen Command in dem Chat ein wo du Slowmode aktivieren möchtest! Zeiten: 1;0 | immer SEKUNDEN!"},
+        {"name": "/giveaway <chat> <dauer> <anzahl-der-gewinner> <gewinn>", "value": "Erstellt ein Giveaway im angegebenen Channel | Zeiten: 1s 1m 1h 1d 1w 1mo 1y"}
+    ],
+
+    "manage2": [
+        {"name": "/endgiveaway <giveaway-nachrichtenID>", "value": "Beendet das angegebene Giveaway sofort!"},
+        {"name": "/rerollgiveaway <giveaway-nachrichtenID>", "value": "Lost neue Gewinner für das angegebene Giveaway aus!"},
+        {"name": "/editgiveaway <giveaway-nachrichtenID> <+zeit|-zeit> <neue-gewinner-anzahl> <neuer-gewinn>", "value": "Ändert das angegebene Giveaway! Zeiten: 1 | immer SEKUNDEN!"},
+        {"name": "/deletegiveaway <giveaway-nachrichtenID>", "value": "Löscht das angegebene Giveaway komplett!"},
+        {"name": "/addrole <rolle>", "value": "Fügt eine Rolle zum Ticket hinzu!"},
+        {"name": "/adduser <spieler>", "value": "Fügt einen Spieler zum Ticket hinzu!"},
+        {"name": "/removerole <rolle>", "value": "Entfernt eine Rolle vom Ticket!"},
+        {"name": "/removeuser <spieler>", "value": "Entfernt einen Spieler vom Ticket!"}
+    ],
+
+    "else": [
+        {"name": "/social", "value": "Zeigt dir alle Links zu den jeweiligen Sozialen Medien und der Website!"},
+        {"name": "/vote", "value": "Zeigt dir den Vote Link für CityCrafting!"},
+        {"name": "/privatchat <spieler> <chatname>", "value": "Erstellt dir mit der getaggten Person und dem gegebenen Namen einen privaten Chat!"},
+        {"name": "/closechat", "value": "Gib diesen Command in dem privaten Chat ein den du löschen möchtest!"},
+        {"name": "/avatar (<spieler>)", "value": "Zeigt dir dein/sein Avatar und mit Rechtsklick hast du den Avatar-Link!"},
+        {"name": "/mcstats", "value": "Gibt dir Infos über den Server z.B. den Status etc."},
+        {"name": "/voicelimit <zahl>", "value": "Limitiert die mögliche Spieler Anzahl deines Temp Channels!"},
+        {"name": "/rank (<spieler>)", "value": "Zeigt dir deine/seine Stats vom Discord!"},
+        {"name": "/leaderboard", "value": "Zeigt die Top 10 Chatter vom Discord Server!"}
+    ]
+}
