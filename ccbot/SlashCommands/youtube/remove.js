@@ -1,6 +1,5 @@
 const { Client, CommandInteraction } = require("discord.js");
-const { SlashCommandBuilder } = require("@discordjs/builders");
-const Discord = require("discord.js");
+const { SlashCommandBuilder } = require("@discordjs/builders");;
 const DB = require("../../schemas/youtubeDB");
 
 module.exports = {

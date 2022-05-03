@@ -1,7 +1,7 @@
 const { Client, CommandInteraction } = require("discord.js");
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const Discord = require("discord.js");
-const { notesChannel } = require("../../config.json");
+const { notesChannel, privateChatCat } = require("../../config.json");
 
 module.exports = {
     ...new SlashCommandBuilder()
@@ -17,13 +17,13 @@ module.exports = {
      */
     run: async (client, interaction, args) => {
 
-        if (interaction.channel.parent == "889772955008122901") {
+        if (interaction.channel.parent == privateChatCat) {
 
             const embed = new Discord.MessageEmbed()
                 .setColor("DEFAULT")
                 .setTitle(`Privat Chat`)
                 .setDescription(`<@${interaction.user.id}> hat einen privaten Chat gelöscht` + "\n\n" + "**Chat Name**" + "\n" + `${interaction.channel.name}`)
-                .setFooter("Bot developed by F.O.X.Y", "")
+                .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
             client.channels.cache.get(notesChannel).send({embeds: [embed]});
     
         interaction.followUp("@here" + "\n" + interaction.user.username + " löscht den privaten Chat in 15 Sekunden!");

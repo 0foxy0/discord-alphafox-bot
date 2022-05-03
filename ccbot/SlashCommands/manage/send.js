@@ -45,7 +45,7 @@ module.exports = {
                 .setColor("DARK_ORANGE")
                 .setTitle(`Privat Nachricht`)
                 .setDescription(`${interaction.user} hat eine private Nachricht gesendet` + "\n\n" + "**Person**" + "\n" + `${person}` + "\n" + "**Nachricht**" + "\n" + `${msg}`)
-                .setFooter("Bot developed by F.O.X.Y", "")
+                .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
 
                 notesChannel2.send({embeds: [embed]});
                 
@@ -55,7 +55,7 @@ module.exports = {
             interaction.followUp("Du bist nicht mein Chef, das kannst du nicht tun!");
     
             setTimeout(() => {
-                interaction.channel.bulkDelete(parseInt(1), true)
+                interaction.channel.bulkDelete(1, true)
             }, 1000 * 3)
         }
     

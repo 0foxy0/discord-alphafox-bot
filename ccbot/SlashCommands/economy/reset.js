@@ -1,12 +1,11 @@
 const { Client, CommandInteraction } = require("discord.js");
 const { SlashCommandBuilder } = require("@discordjs/builders");
-const Discord = require("discord.js");
-const DB = require("../../schemas/levelDB");
+const DB = require("../../schemas/ecoDB");
 
 module.exports = {
     ...new SlashCommandBuilder()
     .setName("statsreset")
-    .setDescription("Setzt die Stats von dir oder einem Spieler zurück!")
+    .setDescription("Setzt die Economy Daten von dir oder einem Spieler zurück!")
     .addUserOption(option => 
         option
             .setName("spieler")
@@ -29,30 +28,30 @@ module.exports = {
             if (mention) {
                 const found = await DB.findOne({ MemberID: mention.id });
                 if (!found) {
-                    interaction.followUp(`Der Spieler ${mention} hat keine Stats!`);
+                    interaction.followUp(`Der Spieler ${mention} hat keine Economy Daten!`);
                     return;
                 }
     
-                await DB.updateOne({ MemberID: mention.id }, { XP: 0, ReqXP: 100, Level: 1 });
-                interaction.followUp(`Die Stats von ${mention} wurden zurückgesetzt!`);
+                await DB.updateOne({ MemberID: mention.id }, { Coins: 0, Level: 1 }, {new: true});
+                interaction.followUp(`Die Economy Daten von ${mention} wurden zurückgesetzt!`);
     
             } else {
                 
                 const found = await DB.findOne({ MemberID: interaction.user.id });
                 if (!found) {
-                    interaction.followUp(`Du hast keine Stats!`);
+                    interaction.followUp(`Du hast keine Economy Daten!`);
                     return;
                 }
 
-                await DB.updateOne({ MemberID: interaction.user.id }, { XP: 0, ReqXP: 100, Level: 1 });
-                interaction.followUp(`Deine Stats wurden zurückgesetzt!`);
+                await DB.updateOne({ MemberID: interaction.user.id }, { Coins: 0, Level: 1 });
+                interaction.followUp(`Deine Economy Daten wurden zurückgesetzt!`);
             }
 
         } else {
             interaction.followUp("Du bist nicht mein Chef, das kannst du nicht tun!");
 
             setTimeout(() => {
-                interaction.channel.bulkDelete(parseInt(1), true)
+                interaction.channel.bulkDelete(1, true)
               }, 1000 * 3)
         }
 

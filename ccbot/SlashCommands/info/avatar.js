@@ -30,7 +30,7 @@ module.exports = {
             .setTitle(mentionedMember.tag + "s Avatar")
             .setImage(mentionedMember.displayAvatarURL({ dynamic: true }))
             .setColor("RANDOM")
-            .setFooter("Bot developed by F.O.X.Y", "")
+            .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
 
             interaction.followUp({embeds: [embed]})
         
@@ -40,7 +40,7 @@ module.exports = {
             .setTitle(mentionedMember.tag + "s Avatar")
             .setImage(mentionedMember.displayAvatarURL({ dynamic: true }))
             .setColor("RANDOM")
-            .setFooter("Bot developed by F.O.X.Y", "")
+            .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
 
         interaction.followUp({embeds: [embed]})
         }

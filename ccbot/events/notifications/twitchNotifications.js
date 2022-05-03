@@ -3,7 +3,6 @@ const client = require("../../index.js");
 const fetch = require("node-superfetch");
 const DB = require("../../schemas/twitchDB");
 
-
 setInterval(async function() {
 
     const streamerList = await DB.find({ ID: "twitch" });

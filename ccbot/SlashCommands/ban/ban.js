@@ -38,11 +38,11 @@ module.exports = {
                 .setColor("RED")
                 .setTitle(`BAN`)
                 .setDescription(`${interaction.user} bannt ${target}` + "\n" + "**Grund**" + "\n" + `${reason}`)
-                .setFooter("Bot developed by F.O.X.Y", "")
+                .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
                 client.channels.cache.find(channel => channel.id === notesChannel).send({embeds: [embed]}).catch(e => {console.log(e)});
 
                 try {
-                    await target.send("Du wurdest von **CityCrafting** gebannt!" + "\n" + "**Grund**: " + reason)
+                    await target.send(`Du wurdest von **${interaction.guild.name}** gebannt!` + "\n" + "**Grund**: " + reason)
                 } catch (e) {
                     interaction.followUp("Die DM konnte nicht an den Spieler gesendet werden!" + "\n" + "Warum? Frage einen @Discord-Admin")
                     console.log(e)

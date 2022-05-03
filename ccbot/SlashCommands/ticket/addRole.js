@@ -1,6 +1,5 @@
 const { Client, CommandInteraction } = require("discord.js");
 const { SlashCommandBuilder } = require("@discordjs/builders");
-const Discord = require("discord.js");
 
 module.exports = {
     ...new SlashCommandBuilder()
@@ -35,14 +34,14 @@ module.exports = {
             interaction.followUp("Du bist nicht mein Chef, das kannst du nicht tun!");
 
             setTimeout(() => {
-                interaction.channel.bulkDelete(parseInt(1), true)
+                interaction.channel.bulkDelete(1, true)
               }, 1000 * 3)
 
         } else if (interaction.channel.parent !== kate) {
             interaction.followUp("Du kannst diesen Befehl nur in Tickets nutzen!");
 
             setTimeout(() => {
-                interaction.channel.bulkDelete(parseInt(1), true)
+                interaction.channel.bulkDelete(1, true)
               }, 1000 * 3)
 
         } else {

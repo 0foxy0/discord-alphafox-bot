@@ -59,7 +59,7 @@ module.exports = {
             const embed = new Discord.MessageEmbed()
             .setTitle(`Gewinn: ${prize}`)
             .setDescription(`Verlost von: ${interaction.user}\nReagiere mit 🎉 um teilzunehmen!\n\nEndet: <t:${endTime}:R>\nGewinner: ${winnerCount}`)
-            .setFooter(`Bot developed by F.O.X.Y`, "")
+            .setFooter(`Bot developed by F.O.X.Y`, "https://bilderupload.org/image/813735985-foxy-original.png")
             .setColor("GREEN")
 
             const msg = await channel.send({content: "||@everyone||\n😱 **GIVEAWAY** 😱", embeds: [embed]});
@@ -83,7 +83,7 @@ module.exports = {
             .setColor("PURPLE")
             .setTitle(`Giveaway`)
             .setDescription(`${interaction.user} hat ein Giveaway in ${channel} gestartet!` + "\n"+"\n" + "**Preis**" + "\n" + `${prize}` + "\n" + "**Zeit**" + "\n" + `${time}` + "\n" + "**Gewinner**" + "\n" + `${winnerCount}`)
-            .setFooter("Bot developed by F.O.X.Y", "")
+            .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
 
             client.channels.cache.get(notesChannel).send({embeds: [embed2]}).catch(e => console.log(e));
 

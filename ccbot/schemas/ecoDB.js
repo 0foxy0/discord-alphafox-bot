@@ -1,11 +1,10 @@
 const { model, Schema } = require("mongoose");
 
-module.exports = model("levels", new Schema({
+module.exports = model("economies", new Schema({
 
     GuildID: String,
     MemberID: String,
-    XP: Number,
-    Level: String,
-    ReqXP: String
+    Coins: Number,
+    Level: Number
     
 }));

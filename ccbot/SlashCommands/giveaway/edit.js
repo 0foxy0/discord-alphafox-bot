@@ -64,7 +64,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
         .setTitle(`Gewinn: ${newPrize}`)
         .setDescription(`Verlost von: <@${found.HosterID}>\nReagiere mit 🎉 um teilzunehmen!\n\nEndet: <t:${addedTime}:R>\nGewinner: ${newWinners}`)
-        .setFooter(`Bot developed by F.O.X.Y`, "")
+        .setFooter(`Bot developed by F.O.X.Y`, "https://bilderupload.org/image/813735985-foxy-original.png")
         .setColor("GREEN")
 
         msg.edit({content: "||@everyone||\n😱 **GIVEAWAY** 😱", embeds: [embed]});
@@ -73,7 +73,7 @@ module.exports = {
         .setColor("PURPLE")
         .setTitle(`Giveaway Edit`)
         .setDescription(`${interaction.user} hat das Giveaway "${giveawayID}" bearbeitet!` + "\n"+"\n" + "**Neuer Preis**" + "\n" + `${newPrize}` + "\n" + "**Hinzugefügte Zeit**" + "\n" + `${plusTime}` + "\n" + "**Gewinner Anzahl**" + "\n" + `${newWinners}`)
-        .setFooter("Bot developed by F.O.X.Y", "")
+        .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
         client.channels.cache.get(notesChannel).send({embeds: [embed2]});
 
         interaction.followUp(`Das Giveaway "${giveawayID}" wurde erfolgreich editiert!`);
@@ -82,7 +82,7 @@ module.exports = {
         interaction.followUp(`Du bist nicht mein Chef, das kannst du nicht tun!`);
     
         setTimeout(() => {
-         interaction.channel.bulkDelete(parseInt(1), true)
+         interaction.channel.bulkDelete(1, true)
        }, 1000 * 3)
      }
     

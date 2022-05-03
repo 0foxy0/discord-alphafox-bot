@@ -2,9 +2,7 @@ const client = require("../../index");
 const Discord = require("discord.js");
 const VoiceCollection = new Discord.Collection();
 const DB = require("../../schemas/tempChnDB");
-const joinToCreate = "939600319384518696";
-const tempChannelParent = "889836813051645952";
-
+const { joinToCreate, tempChnCat } = require("../../config.json");
 
 client.on("voiceStateUpdate", async (oldState, newState) => {
 
@@ -48,7 +46,7 @@ client.on("voiceStateUpdate", async (oldState, newState) => {
 
             const channel = await newState.guild.channels.create(user.username + `'s Talk`, {
                 type: "GUILD_VOICE",
-                parent: tempChannelParent,
+                parent: tempChnCat,
             });
 
             newState.member.voice.setChannel(channel.id);

@@ -4,7 +4,7 @@ const { Client } = require("discord.js");
 const mongoose = require("mongoose");
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
-const { clientID, token, mongooseConnectionString } = require("../config.json");
+const { clientID, token, mongodbLink } = require("../config.json");
 
 const globPromise = promisify(glob);
 
@@ -46,18 +46,18 @@ module.exports = async (client) => {
                 const promises = [];
     
                 for (const command of data) {
-                const deleteUrl = `${Routes.applicationGuildCommands(clientID, guild.id)}/${command.id}`;
-                promises.push(rest.delete(deleteUrl));
-            }
-            return Promise.all(promises); 
-        });
+                    const deleteUrl = `${Routes.applicationGuildCommands(clientID, guild.id)}/${command.id}`;
+                    promises.push(rest.delete(deleteUrl));
+                }
+                return Promise.all(promises); 
+            });
         });
 
         // Status
-        await console.log(`Script logged in as: ${client.user.tag}!`)
+        console.log(`Script logged in as: ${client.user.tag}!`)
         await client.user.setActivity("/help", {type: "PLAYING"});
     });
 
     // mongoose
-    mongoose.connect(mongooseConnectionString).then(() => console.log("Connected to MongoDB!"));
+    mongoose.connect(mongodbLink).then(() => console.log("Connected to MongoDB!"));
 };

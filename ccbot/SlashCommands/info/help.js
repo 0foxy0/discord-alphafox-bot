@@ -41,10 +41,9 @@ module.exports = {
 
                 const embed = new Discord.MessageEmbed()
                 .setColor("RANDOM")
-                .setTitle(`CityCrafting's Befehle`)
+                .setTitle(`${interaction.guild.name}'s Befehle`)
                 .addFields(helpConf.admin)
-                .setFooter("Bot developed by F.O.X.Y", "")
-                .setThumbnail("")                
+                .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")             
 
                 interaction.followUp({embeds: [embed], components: [row]});
 
@@ -63,10 +62,9 @@ module.exports = {
 
                 const embed = new Discord.MessageEmbed()
                 .setColor("RANDOM")
-                .setTitle(`CityCrafting's Befehle`)
+                .setTitle(`${interaction.guild.name}'s Befehle`)
                 .addFields(helpConf.ban)
-                .setFooter("Bot developed by F.O.X.Y", "")
-                .setThumbnail("")
+                .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
 
                 interaction.followUp({embeds: [embed], components: [row]});
 
@@ -85,10 +83,9 @@ module.exports = {
 
                 const embed = new Discord.MessageEmbed()
                 .setColor("RANDOM")
-                .setTitle(`CityCrafting's Befehle`)
+                .setTitle(`${interaction.guild.name}'s Befehle`)
                 .addFields(helpConf.manage)
-                .setFooter("Bot developed by F.O.X.Y", "")
-                .setThumbnail("")
+                .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
 
                 interaction.followUp({embeds: [embed], components: [row]});
 
@@ -96,10 +93,9 @@ module.exports = {
             
                 const embed = new Discord.MessageEmbed()
                 .setColor("RANDOM")
-                .setTitle(`CityCrafting's Befehle`)
+                .setTitle(`${interaction.guild.name}'s Befehle`)
                 .addFields(helpConf.else)
-                .setFooter("Bot developed by F.O.X.Y", "")
-                .setThumbnail("")
+                .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
 
                 interaction.followUp({embeds: [embed]});
             }
@@ -125,8 +121,7 @@ module.exports = {
                     .setColor("RANDOM")
                     .setTitle(`${target.user.username}'s Helpliste`)
                     .addFields(helpConf.admin)
-                    .setFooter("Bot developed by F.O.X.Y", "")
-                    .setThumbnail("")                
+                    .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")              
     
                     interaction.followUp({embeds: [embed], components: [row]});
     
@@ -147,8 +142,7 @@ module.exports = {
                     .setColor("RANDOM")
                     .setTitle(`${target.user.username}'s Helpliste`)
                     .addFields(helpConf.ban)
-                    .setFooter("Bot developed by F.O.X.Y", "")
-                    .setThumbnail("")
+                    .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
     
                     interaction.followUp({embeds: [embed], components: [row]});
     
@@ -169,8 +163,7 @@ module.exports = {
                     .setColor("RANDOM")
                     .setTitle(`${target.user.username}'s Helpliste`)
                     .addFields(helpConf.manage)
-                    .setFooter("Bot developed by F.O.X.Y", "")
-                    .setThumbnail("")
+                    .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
     
                     interaction.followUp({embeds: [embed], components: [row]});
     
@@ -180,8 +173,7 @@ module.exports = {
                     .setColor("RANDOM")
                     .setTitle(`${target.user.username}'s Helpliste`)
                     .addFields(helpConf.else)
-                    .setFooter("Bot developed by F.O.X.Y", "")
-                    .setThumbnail("")
+                    .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
     
                     interaction.followUp({embeds: [embed]});
                 }

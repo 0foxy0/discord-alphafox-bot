@@ -4,8 +4,8 @@ const Discord = require("discord.js");
 
 module.exports = {
     ...new SlashCommandBuilder()
-    .setName("vote")
-    .setDescription("Zeigt dir den Vote Link")
+    .setName("invitelink")
+    .setDescription("Zeigt dir den Discord Server Invite Link!")
     ,
     /**
      *
@@ -18,11 +18,18 @@ module.exports = {
 
         let embed = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .setTitle(`${interaction.guild.name}'s Vote Link`)
-        .setDescription("**Minecraft-Server.eu**: \n**MClist.eu**: ")
+        .setTitle(`${interaction.guild.name}'s Invitelink`)
         .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")               
 
-        interaction.followUp({embeds: [embed]});
+        client.guilds.cache.forEach(guild => {
+            guild.invites.fetch().then(invites => {
+                invites.forEach((invite, index) => {
+                    embed.addFields({ name: `${index+1}.`, value: `https://discord.com/invite/${invite.code}` });
+                })
+            })
+        })
+
+        return interaction.followUp({embeds: [embed]});
     }
 
 }

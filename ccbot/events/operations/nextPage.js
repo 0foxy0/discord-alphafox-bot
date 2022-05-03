@@ -27,10 +27,9 @@ client.on("interactionCreate", async interaction => {
 
         const embed = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .setTitle(`CityCrafting's Befehle Seite 2`)
+        .setTitle(`${interaction.guild.name}'s Befehle Seite 2`)
         .addFields(helpConf.admin2)
-        .setFooter("Bot developed by F.O.X.Y", "")
-        .setThumbnail("")                
+        .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")              
 
         msg.edit({embeds: [embed], components: [row]});
         interaction.reply({content: "Seite 2", ephemeral: true});
@@ -52,10 +51,9 @@ client.on("interactionCreate", async interaction => {
 
         const embed = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .setTitle(`CityCrafting's Befehle Seite 3`)
+        .setTitle(`${interaction.guild.name}'s Befehle Seite 3`)
         .addFields(helpConf.admin3)
-        .setFooter("Bot developed by F.O.X.Y", "")
-        .setThumbnail("")                
+        .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")               
 
         msg.edit({embeds: [embed], components: [row]});
         interaction.reply({content: "Seite 3", ephemeral: true});
@@ -77,10 +75,9 @@ client.on("interactionCreate", async interaction => {
 
         const embed = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .setTitle(`CityCrafting's Befehle Seite 2`)
+        .setTitle(`${interaction.guild.name}'s Befehle Seite 2`)
         .addFields(helpConf.ban2)
-        .setFooter("Bot developed by F.O.X.Y", "")
-        .setThumbnail("")                
+        .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")              
 
         msg.edit({embeds: [embed], components: [row]});
         interaction.reply({content: "Seite 2", ephemeral: true});
@@ -103,10 +100,9 @@ client.on("interactionCreate", async interaction => {
 
         const embed = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .setTitle(`CityCrafting's Befehle Seite 2`)
+        .setTitle(`${interaction.guild.name}'s Befehle Seite 2`)
         .addFields(helpConf.manage2)
-        .setFooter("Bot developed by F.O.X.Y", "")
-        .setThumbnail("")                
+        .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")               
 
         msg.edit({embeds: [embed], components: [row]});
         interaction.reply({content: "Seite 2", ephemeral: true});
@@ -134,10 +130,9 @@ client.on("interactionCreate", async interaction => {
 
         const embed = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .setTitle(`CityCrafting's Befehle Seite 2`)
+        .setTitle(`${interaction.guild.name}'s Befehle Seite 2`)
         .addFields(helpConf.admin2)
-        .setFooter("Bot developed by F.O.X.Y", "")
-        .setThumbnail("")                
+        .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
 
         msg.edit({embeds: [embed], components: [row]});
         interaction.reply({content: "Seite 2", ephemeral: true});
@@ -159,10 +154,9 @@ client.on("interactionCreate", async interaction => {
 
         const embed = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .setTitle(`CityCrafting's Befehle`)
+        .setTitle(`${interaction.guild.name}'s Befehle`)
         .addFields(helpConf.admin)
-        .setFooter("Bot developed by F.O.X.Y", "")
-        .setThumbnail("")                
+        .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")              
 
         msg.edit({embeds: [embed], components: [row]});
         interaction.reply({content: "Seite 1", ephemeral: true});
@@ -184,10 +178,9 @@ client.on("interactionCreate", async interaction => {
 
         const embed = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .setTitle(`CityCrafting's Befehle`)
+        .setTitle(`${interaction.guild.name}'s Befehle`)
         .addFields(helpConf.ban)
-        .setFooter("Bot developed by F.O.X.Y", "")
-        .setThumbnail("")
+        .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
 
         msg.edit({embeds: [embed], components: [row]});
         interaction.reply({content: "Seite 1", ephemeral: true});
@@ -209,10 +202,9 @@ client.on("interactionCreate", async interaction => {
 
         const embed = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .setTitle(`CityCrafting's Befehle`)
+        .setTitle(`${interaction.guild.name}'s Befehle`)
         .addFields(helpConf.manage)
-        .setFooter("Bot developed by F.O.X.Y", "")
-        .setThumbnail("")
+        .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
 
         msg.edit({embeds: [embed], components: [row]});
         interaction.reply({content: "Seite 1", ephemeral: true});

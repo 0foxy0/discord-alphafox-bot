@@ -12,13 +12,13 @@ client.on("interactionCreate", async interaction => {
     const embedC = new Discord.MessageEmbed()
     .setColor('GREEN')
     .setTitle(`Ticket Geschlossen`)
-    .setFooter('F.O.X.Y | Geschlossen am', '')
+    .setFooter('F.O.X.Y | Geschlossen am', 'https://bilderupload.org/image/813735985-foxy-original.png')
     .setTimestamp();
 
     const embedQ = new Discord.MessageEmbed()
     .setColor("BLUE")
     .setTitle(`Ticket schließen?`)
-    .setFooter(`Bot developed by F.O.X.Y`, "");
+    .setFooter(`Bot developed by F.O.X.Y`, "https://bilderupload.org/image/813735985-foxy-original.png");
 
     let row = new Discord.MessageActionRow()
     .addComponents(
@@ -134,8 +134,8 @@ client.on("interactionCreate", async interaction => {
 
         let name2 = "";
         const member2 = interaction.guild.members.cache.get(docs.MemberID);
-        if (!member2) name = "userLeft";
-        if (member2) name = `${member2.user.username}`;
+        if (!member2) name2 = "userLeft";
+        if (member2) name2 = `${member2.user.username}`;
 
     const attachment2 = await createTranscript(interaction.channel, {
         limit: -1,

@@ -27,8 +27,7 @@ module.exports = {
             const embed = new Discord.MessageEmbed()
             .setTitle("Creator Liste")
             .setColor("RED")
-            .setThumbnail('')
-            .setFooter("Bot developed by F.O.X.Y", "")
+            .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
 
             for (const data of creatorList) {
 

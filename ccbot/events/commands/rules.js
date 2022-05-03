@@ -1,18 +1,20 @@
 const client = require("../../index");
 const Discord = require("discord.js");
 const fs = require("fs");
-
-let ticketChannel = "816053070046691368";
-const ruleRole = "802977911589830676";
-const unidentified = "869195642596126771";
+const { prefix, crtTicketChn, ruleRole, unidentifiedRole } = require("../../config.json");
 
 client.on("messageCreate", async message => {
 
-    if (message.content.startsWith("cc!regeln")) {
+    if (message.content.startsWith(prefix + "regeln")) {
         if (message.member.permissions.has("ADMINISTRATOR")) {
 
+            const craftingTable = message.guild.emojis.cache.find(e => e.name == "crafting_table");
+            const facebook = message.guild.emojis.cache.find(e => e.name == "facebook");
+            const discord = message.guild.emojis.cache.find(e => e.name == "discord");
+            const twitch = message.guild.emojis.cache.find(e => e.name == "twitch");
+
             let embed = new Discord.MessageEmbed()
-            .setTitle("CityCrafting")
+            .setTitle(`${message.guild.name}`)
             .setDescription(
                 "**Discord Regeln**"
                 + "\n" +
@@ -28,7 +30,7 @@ client.on("messageCreate", async message => {
                 + "\n" +
                 "> - Keine Links schicken!"
                 + "\n" +
-                "> - Bei Problemen ein Ticket in " + `<#${ticketChannel}>` + " öffnen!"
+                "> - Bei Problemen ein Ticket in " + `<#${crtTicketChn}>` + " öffnen!"
                 + "\n" +
                 "> - An Anweisungen von Teammitglieder halten!"
                 + "\n" +
@@ -50,12 +52,24 @@ client.on("messageCreate", async message => {
                 + "\n" +
                 "> - Bugusing wird mit einem Monat Ban bestraft!"
                 + "\n" + "\n" +
-                "Wenn du auf unserem Minecraft Server spielst linke deinen Account mit !link (in einem Discord Chat) dann erklärt dir der Bot den Rest!"
+                "**Umfrage**"
+                + "\n" +
+                "Wie seit ihr auf uns aufmerksam geworden?"
                 + "\n" + "\n" +
-                "Akzeptiere die Regeln mit dem ✅"
+                `Facebook = ${facebook}`
+                + "\n" +
+                `Minecraft-server.eu = ${craftingTable}`
+                + "\n" +
+                `Freunde = 🤝`
+                + "\n" +
+                `Andere Discord Server = ${discord}`
+                + "\n" +
+                `Twitch Stream = ${twitch}`
+                + "\n" +
+                `Sonstiges = 🎪`
             )
             .setColor("PURPLE")
-            .setFooter("Bot developed by F.O.X.Y", "")
+            .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
                     
             let button = new Discord.MessageButton()
             .setLabel("Bestätigen")
@@ -66,7 +80,13 @@ client.on("messageCreate", async message => {
             let row = new Discord.MessageActionRow()
             .addComponents(button);
 
-            await message.channel.send({embeds: [embed], components: [row]})
+            const msg = await message.channel.send({embeds: [embed], components: [row]});
+            msg.react(facebook);
+            msg.react(craftingTable);
+            msg.react("🤝");
+            msg.react(discord);
+            msg.react(twitch);
+            msg.react("🎪");
             message.delete();
 
             }
@@ -81,13 +101,13 @@ client.on("messageCreate", async message => {
                 
                 interaction.user.send(`Du hast die Regeln auf **${interaction.guild.name}** entstätigt!`).catch(e => console.log(e));
                 interaction.member.roles.remove(ruleRole).catch(e => {console.log(e)});
-                interaction.member.roles.add(unidentified).catch(e => {console.log(e)});
+                interaction.member.roles.add(unidentifiedRole).catch(e => {console.log(e)});
 
-            } else if (interaction.member.roles.resolve(unidentified)) {
+            } else if (interaction.member.roles.resolve(unidentifiedRole)) {
 
                 interaction.user.send(`Du hast die Regeln auf **${interaction.guild.name}** bestätigt!`).catch(e => console.log(e));
                 interaction.member.roles.add(ruleRole).catch(e => {console.log(e)})
-                interaction.member.roles.remove(unidentified).catch(e => {console.log(e)});
+                interaction.member.roles.remove(unidentifiedRole).catch(e => {console.log(e)});
             }
     }
 })

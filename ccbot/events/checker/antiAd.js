@@ -10,19 +10,19 @@ const { notesChannel } = require("../../config.json");
       if (!message.member.permissions.has("ADMINISTRATOR")) {
         
         if (message.content.toString().includes("discord.gg") || message.content.toString().includes("discord.com/invite")) {
-          if (message.content.toString().includes("discord.gg/5aHJvjJqN5") || message.content.toString().includes("discord.com/invite/5aHJvjJqN5")) return;
-  
-            const notesChannel2 = message.guild.channels.cache.get(notesChannel);
-              const embed = new Discord.MessageEmbed()
-              .setColor("RED")
-              .setTitle(`Gelöschte Einladung`)
-              .setDescription(`Von <@${message.author.id}> in <#${message.channel.id}>` + "\n" + "**Link**" + "\n" + `${message.content}`)
-              .setFooter("Bot developed by F.O.X.Y", "")
-              notesChannel2.send({embeds: [embed]}).catch(e => {console.log(e)});
+        if (message.content.toString().includes("discord.gg/eFAWBzHwzT") || message.content.toString().includes("discord.com/invite/eFAWBzHwzT")) return;
+
+          const notesChannel2 = message.guild.channels.cache.get(notesChannel);
+          const embed = new Discord.MessageEmbed()
+          .setColor("RED")
+          .setTitle(`Gelöschte Einladung`)
+          .setDescription(`Von <@${message.author.id}> in <#${message.channel.id}>` + "\n\n" + "**Link**" + "\n" + `${message.content}`)
+          .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
+          notesChannel2.send({ embeds: [embed] });
                 
-            message.delete();
-            message.channel.send(`<@${message.author.id}>` + " es wird hier keine Werbung gemacht!" + "\n" + "Du wurdest für 1 Tag gestummt!");
-            message.member.timeout(ms("1d"), "Discord Invite Link");
+          message.delete();
+          message.channel.send(`<@${message.author.id}>` + " es wird hier keine Werbung gemacht!" + "\n" + "Du wurdest für 1 Tag gestummt!");
+          message.member.timeout(ms("1d"), "Discord Invite Link");
         }
       }
   
@@ -38,9 +38,9 @@ const { notesChannel } = require("../../config.json");
               const embed = new Discord.MessageEmbed()
               .setColor("RED")
               .setTitle(`Gelöschter Link`)
-              .setDescription(`Von <@${message.author.id}> in <#${message.channel.id}>` + "\n" + "**Link**" + "\n" + `${message.content}`)
-              .setFooter("Bot developed by F.O.X.Y", "")
-              notesChannel2.send({embeds: [embed]}).catch(e => {console.log(e)});
+              .setDescription(`Von <@${message.author.id}> in <#${message.channel.id}>` + "\n\n" + "**Link**" + "\n" + `${message.content}`)
+              .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
+              notesChannel2.send({ embeds: [embed] });
               
             message.delete();
             message.channel.send(`<@${message.author.id}>` + " du darfst keine Links senden!");
@@ -68,7 +68,7 @@ const { notesChannel } = require("../../config.json");
           ];
             
             let foundInText = false;
-            for (var i in blacklist) {
+            for (let i in blacklist) {
                 if (msg.content.toLowerCase().toString().includes(blacklist[i].toLowerCase().toString())) foundInText = true;
             }
     
@@ -80,8 +80,8 @@ const { notesChannel } = require("../../config.json");
                 const embed = new Discord.MessageEmbed()
                 .setColor("RED")
                 .setTitle(`Gelöschte Nachricht`)
-                .setDescription(`Von <@${msg.author.id}> in <#${msg.channel.id}>` + "\n" + "**Nachricht**" + "\n" + `${msg.content}`)
-                .setFooter("Bot developed by F.O.X.Y", "")
+                .setDescription(`Von <@${msg.author.id}> in <#${msg.channel.id}>` + "\n\n" + "**Nachricht**" + "\n" + `${msg.content}`)
+                .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
                 notesChannel2.send({embeds: [embed]}).catch(e => {console.log(e)});
     
                 msg.delete();

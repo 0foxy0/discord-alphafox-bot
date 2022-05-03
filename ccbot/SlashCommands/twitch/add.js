@@ -51,7 +51,7 @@ module.exports = {
             interaction.followUp("Du bist nicht mein Chef, das kannst du nicht tun!");
 
             setTimeout(() => {
-                interaction.channel.bulkDelete(parseInt(1), true)
+                interaction.channel.bulkDelete(1, true)
               }, 1000 * 3)
         }
     

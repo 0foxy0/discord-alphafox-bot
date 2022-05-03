@@ -49,7 +49,8 @@ module.exports = {
             users.forEach(user => {
                 const member = channel.guild.members.cache.get(user.id);
                 if (member.user.bot) return;
-                if (member.permissions.has("ADMINISTRATOR" || "MANAGE_MESSAGES" || "BAN_MEMBERS")) return;
+                if (member.permissions.has("ADMINISTRATOR") || member.permissions.has("MANAGE_MESSAGES")
+                    || member.permissions.has("BAN_MEMBERS")) return;
 
                 participants.push(user.id);
             });
@@ -57,7 +58,7 @@ module.exports = {
             const embed = new Discord.MessageEmbed()
             .setTitle(`Gewinn: ${found.Prize}`)
             .setColor("NOT_QUITE_BLACK")
-            .setFooter("Bot developed by F.O.X.Y", "")
+            .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
             .setTimestamp();
 
             if (participants.length === 0) return interaction.followUp(`**ERROR**: Keine Teilnehmer!`);
@@ -102,7 +103,7 @@ module.exports = {
             .setColor("PURPLE")
             .setTitle(`Giveaway Reroll`)
             .setDescription(`${interaction.user} hat das Giveaway "${giveawayID}" neu ausgelost!\n\n**Neue Gewinner**\n${winnerMSG}`)
-            .setFooter("Bot developed by F.O.X.Y", "")
+            .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
             client.channels.cache.get(notesChannel).send({embeds: [embed2]});
 
             interaction.followUp(`Das Giveaway "${giveawayID}" wurde erfolgreich neu ausgelost!`);
@@ -112,7 +113,7 @@ module.exports = {
         interaction.followUp(`Du bist nicht mein Chef, das kannst du nicht tun!`);
     
         setTimeout(() => {
-         interaction.channel.bulkDelete(parseInt(1), true)
+         interaction.channel.bulkDelete(1, true)
        }, 1000 * 3)
      }
     

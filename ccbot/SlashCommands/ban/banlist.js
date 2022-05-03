@@ -18,22 +18,23 @@ module.exports = {
         if (interaction.member.permissions.has("BAN_MEMBERS")) {
 
             const fetchBans = await interaction.guild.bans.fetch();
-            const bannedMembers = (await fetchBans)
-            .map((member) => member.user.tag)
-            .join("\n");
 
             let embed = new Discord.MessageEmbed()
             .setColor("YELLOW")
-            .setTitle(`BANLIST`)
-            .setDescription(`${bannedMembers}`)
-            .setFooter("Bot developed by F.O.X.Y", "")
+            .setTitle(`Ban Liste`)
+            .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
+
+            fetchBans.forEach(ban => {
+                embed.addFields({ name: `${ban.user.tag}`, value: `${ban.reason}`, inline: true });
+            })
+
             interaction.followUp({embeds: [embed]});
 
-        }else {
+        } else {
         interaction.followUp("Du bist nicht mein Chef, das kannst du nicht tun!");
     
         setTimeout(() => {
-            interaction.channel.bulkDelete(parseInt(1), true)
+            interaction.channel.bulkDelete(1, true)
           }, 1000 * 3)
     }    
 

@@ -29,7 +29,7 @@ module.exports = {
                 {name: "🛰Server", value: "└ `"+interaction.guild.name+"`", inline: true}
             )
             .setColor("RED")
-            .setFooter("Bot developed by F.O.X.Y", "")
+            .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
             .setThumbnail(client.user.avatarURL({ dynamic: true }))
 
             await interaction.followUp({embeds: [embed]});
@@ -38,7 +38,7 @@ module.exports = {
             interaction.followUp("Du bist nicht mein Chef du kannst das nicht tuen!");
         
             setTimeout(() => {
-                interaction.channel.bulkDelete(parseInt(1), true)
+                interaction.channel.bulkDelete(1, true)
               }, 1000 * 3)
 
         }

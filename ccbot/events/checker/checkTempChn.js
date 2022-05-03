@@ -1,10 +1,11 @@
 const client = require("../../index");
+const { tempChnCat } = require("../../config.json");
 
 setInterval(async () => {
     let category;
 
     client.channels.cache.forEach(chn => {
-        if (chn.type == "GUILD_CATEGORY" && chn.id === "889836813051645952") {
+        if (chn.type == "GUILD_CATEGORY" && chn.id === tempChnCat) {
             category = chn;
         }
     })

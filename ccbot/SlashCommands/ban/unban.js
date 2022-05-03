@@ -36,7 +36,7 @@ module.exports = {
                 .setColor("GREEN")
                 .setTitle(`UNBAN`)
                 .setDescription(`${interaction.user} entbannt <@${member}>`)
-                .setFooter("Bot developed by F.O.X.Y", "")
+                .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
                 await client.channels.cache.find(channel => channel.id === notesChannel).send({embeds: [embed]}).catch(e => console.log(e));
 
                 } catch (e) {
@@ -48,7 +48,7 @@ module.exports = {
                 interaction.followUp("Du bist nicht mein Chef, das kannst du nicht tun!");
             
                 setTimeout(() => {
-                    interaction.channel.bulkDelete(parseInt(1), true)
+                    interaction.channel.bulkDelete(1, true)
                   }, 1000 * 3)
             }
     }

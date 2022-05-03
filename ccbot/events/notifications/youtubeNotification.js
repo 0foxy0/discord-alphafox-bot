@@ -2,8 +2,7 @@ const Discord = require("discord.js");
 const client = require("../../index");
 const fetch = require("node-superfetch");
 const DB = require("../../schemas/youtubeDB");
-const youtubeChn = "918061126665777152";
-
+const { socialmediaChn } = require("../../config.json");
 
 setInterval(async function() {
 
@@ -32,7 +31,7 @@ setInterval(async function() {
     
         DB.findOne({ CreatorID: creator.CreatorID }, async (err, docs) => {
     
-            const newsChannel = client.channels.cache.get(youtubeChn);
+            const newsChannel = client.channels.cache.get(socialmediaChn);
     
             if (docs.Send === true) {
     

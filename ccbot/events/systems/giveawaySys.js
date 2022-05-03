@@ -24,7 +24,8 @@ setInterval(async () => {
                     users.forEach(user => {
                         const member = channel.guild.members.cache.get(user.id);
                         if (member.user.bot) return;
-                        if (member.permissions.has("ADMINISTRATOR" || "MANAGE_MESSAGES" || "BAN_MEMBERS")) return;
+                        if (member.permissions.has("ADMINISTRATOR") || member.permissions.has("MANAGE_MESSAGES") ||
+                            member.permissions.has("BAN_MEMBERS") || member.permissions.has("PRIORITY_SPEAKER")) return;
 
                         participants.push(user.id);
                     });
@@ -32,7 +33,7 @@ setInterval(async () => {
                     const embed = new Discord.MessageEmbed()
                     .setTitle(`Gewinn: ${giveaway.Prize}`)
                     .setColor("NOT_QUITE_BLACK")
-                    .setFooter("Bot developed by F.O.X.Y", "")
+                    .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
                     .setTimestamp();
 
                     if (participants.length === 0) return (

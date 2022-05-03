@@ -1,6 +1,5 @@
 const { Client, CommandInteraction } = require("discord.js");
 const { SlashCommandBuilder } = require("@discordjs/builders");
-const Discord = require("discord.js");
 const DB = require("../../schemas/tempChnDB");
 
 module.exports = {
@@ -43,7 +42,7 @@ module.exports = {
                     interaction.followUp("Du bist nicht in deinem oder in einem Temp. Channel!");
         
                     setTimeout(() => {
-                        interaction.channel.bulkDelete(parseInt(1), true)
+                        interaction.channel.bulkDelete(1, true)
                     }, 1000 * 3)
                 }
     
@@ -54,7 +53,7 @@ module.exports = {
             interaction.followUp("Du bist in keinem Channel!");
 
             setTimeout(() => {
-                interaction.channel.bulkDelete(parseInt(1), true)
+                interaction.channel.bulkDelete(1, true)
               }, 1000 * 3)
         }
     

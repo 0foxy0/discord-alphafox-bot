@@ -1,15 +1,19 @@
 const client = require("../../index");
 const Discord = require("discord.js");
 const DB = require("../../schemas/ticketDB");
-const perms = require("../../permissions.json");
+const opsDB = require("../../schemas/ticketOpsDB");
 
 client.on("interactionCreate", async interaction => {
+
+    if (!["support_ticket", "apply_ticket", "bug_ticket"].includes(interaction.customId)) return;
+
+    const opsFound = await opsDB.findOne({ GuildID: interaction.guild.id });
+    if (!opsFound) return interaction.reply({ content: "Es gibt keine Ticket Einstellungen bitte melde das einem @Discord Developer!", ephemeral: true });
 
     if (interaction.customId == "support_ticket") {
 
         const found = await DB.findOne({ MemberID: interaction.member.id, Type: "support_ticket", Closed: false })
         if (found) return interaction.user.send(`Du hast bereits auf **${interaction.guild.name}** ein Support-Ticket offen!`).catch(e => {console.log(e)});
-
 
         let category;
         interaction.deferUpdate();
@@ -33,7 +37,11 @@ client.on("interactionCreate", async interaction => {
             interaction.guild.channels.create(interaction.user.username + `-support`, {
                 type: "GUILD_TEXT",
                 parent: category,
-                permissionOverwrites: perms[interaction.guild.id]
+                permissionOverwrites: [
+                    { id: interaction.guild.id, deny: ["VIEW_CHANNEL"] },
+                    { id: client.user.id, allow: ["VIEW_CHANNEL"] },
+                    { id: opsFound.SupRoleID, allow: ["VIEW_CHANNEL"] }
+                ]
 
             }).then(async chn => {
                 await DB.create({
@@ -62,8 +70,7 @@ client.on("interactionCreate", async interaction => {
                 "Das Ticket kannst du mit 🔒 schließen"
                 )
                 .setColor("RED")
-                .setThumbnail("")
-                .setFooter("Bot developed by F.O.X.Y", "")
+                .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
             
 
                 let row = new Discord.MessageActionRow()
@@ -87,11 +94,11 @@ client.on("interactionCreate", async interaction => {
                     .setEmoji("✔️")
                 );
 
-                chn.send({embeds: [embed], components: [row]});
+                chn.send({ embeds: [embed], components: [row] });
                 chn.send("@here")
 
                 setTimeout(() => {
-                    chn.bulkDelete(parseInt(1), true)
+                    chn.bulkDelete(1, true)
                   }, 1000 * 1)
 
             })
@@ -124,7 +131,11 @@ client.on("interactionCreate", async interaction => {
                 interaction.guild.channels.create(interaction.user.username + `-bewerbung`, {
                     type: "GUILD_TEXT",
                     parent: category,
-                    permissionOverwrites: perms[interaction.guild.id]
+                    permissionOverwrites: [
+                        { id: interaction.guild.id, deny: ["VIEW_CHANNEL"] },
+                        { id: client.user.id, allow: ["VIEW_CHANNEL"] },
+                        { id: opsFound.ApplyRoleID, allow: ["VIEW_CHANNEL"] }
+                    ]
     
                 }).then(async chn => {
                     await DB.create({
@@ -152,8 +163,7 @@ client.on("interactionCreate", async interaction => {
                     "Das Ticket kannst du mit 🔒 schließen"
                     )
                     .setColor("RED")
-                    .setThumbnail("")
-                    .setFooter("Bot developed by F.O.X.Y", "")
+                    .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
                 
     
                     let row = new Discord.MessageActionRow()
@@ -177,7 +187,7 @@ client.on("interactionCreate", async interaction => {
                         .setEmoji("✔️")
                     );
     
-                    chn.send({embeds: [embed], components: [row]});
+                    chn.send({ embeds: [embed], components: [row] });
                     chn.send("@here")
     
                     setTimeout(() => {
@@ -214,7 +224,11 @@ client.on("interactionCreate", async interaction => {
                     interaction.guild.channels.create(interaction.user.username + `-bug`, {
                         type: "GUILD_TEXT",
                         parent: category,
-                        permissionOverwrites: perms[interaction.guild.id]
+                        permissionOverwrites: [
+                            { id: interaction.guild.id, deny: ["VIEW_CHANNEL"] },
+                            { id: client.user.id, allow: ["VIEW_CHANNEL"] },
+                            { id: opsFound.BugRoleID, allow: ["VIEW_CHANNEL"] }
+                        ]
         
                     }).then(async chn => {
                         await DB.create({
@@ -243,8 +257,7 @@ client.on("interactionCreate", async interaction => {
                         "Das Ticket kannst du mit 🔒 schließen"
                         )
                         .setColor("RED")
-                        .setThumbnail("")
-                        .setFooter("Bot developed by F.O.X.Y", "")
+                        .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
                     
         
                         let row = new Discord.MessageActionRow()
@@ -272,7 +285,7 @@ client.on("interactionCreate", async interaction => {
                         chn.send("@here")
         
                         setTimeout(() => {
-                            chn.bulkDelete(parseInt(1), true)
+                            chn.bulkDelete(1, true)
                           }, 1000 * 1)
         
                     })

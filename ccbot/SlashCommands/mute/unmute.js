@@ -34,7 +34,7 @@ module.exports = {
                     .setColor('BLUE')
                     .setTitle(`UNMUTE`)
                     .setDescription(`${interaction.user} entstummt ${user}`)
-                    .setFooter("Bot developed by F.O.X.Y", "")
+                    .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")
 
                 client.channels.cache.find(channel => channel.id === notesChannel).send({embeds: [embed]}).catch(e => console.log(e));
             
@@ -46,7 +46,7 @@ module.exports = {
             interaction.followUp(`${interaction.user}` + "Du bist nicht mein Chef, das kannst du nicht tun!");
             
             setTimeout(() => {
-                interaction.channel.bulkDelete(parseInt(1), true)
+                interaction.channel.bulkDelete(1, true)
               }, 1000 * 3)
         }
     }

@@ -10,7 +10,7 @@ client.on("messageCreate", async msg => {
     const returnMSG = "Du darfst **keine Teammitglieder** taggen!\nBitte lies dir nochmal die **Regeln** durch!";
     const WarnMSG = "Du hast zum **2.** mal ein **Teammitglied** getaggt!\nDu wurdest für **24h gemuted**!";
 
-    if (!msg.member.permissions.has("PRIORITY_SPEAKER" || "ADMINISTRATOR") && msg.channel.parent.name !== "tickets" && !msg.member.roles.cache.has("842562790933397556")) {
+    if ((!msg.member.permissions.has("ADMINISTRATOR") || !msg.member.permissions.has("PRIORITY_SPEAKER")) && msg.channel.parent.name !== "tickets") {
         const found = await DB.findOne({ MemberID: msg.member.id });
 
         let teamRole = false;

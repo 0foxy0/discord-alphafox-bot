@@ -5,7 +5,7 @@ const Discord = require("discord.js");
 module.exports = {
     ...new SlashCommandBuilder()
     .setName("social")
-    .setDescription("Zeigt dir die Sozialen Medien von CityCrafting")
+    .setDescription("Zeigt dir die Sozialen Medien!")
     ,
     /**
      *
@@ -18,17 +18,16 @@ module.exports = {
 
         let embed = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .setTitle(`CityCrafting's Socialmedia`)
+        .setTitle(`${interaction.guild.name}'s Socialmedia`)
         .addFields(
-            {name: "Website", value: "https://citycrafting.de"},
-            {name: "Twitch", value: "https://twitch.tv/craftcityhd"},
-            {name: "Instagram", value: "https://instagram.com/craftcityhd"},
-            {name: "Youtube", value: "https://www.youtube.com/channel/UCNDEfwEN3eCUwCdRBe-lHaw"},
-            {name: "Twitter", value: "https://twitter.com/CraftCityHD1"},
-            {name: "Facebook", value: "https://www.facebook.com/CityCrafting2021"}
+            {name: "Website", value: ""},
+            {name: "Twitch", value: ""},
+            {name: "Instagram", value: ""},
+            {name: "Youtube", value: ""},
+            {name: "Twitter", value: ""},
+            {name: "Facebook", value: ""}
         )
-        .setFooter("Bot developed by F.O.X.Y", "")
-        .setThumbnail("")                
+        .setFooter("Bot developed by F.O.X.Y", "https://bilderupload.org/image/813735985-foxy-original.png")               
 
         interaction.followUp({embeds: [embed]});
     }
