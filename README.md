@@ -1,6 +1,6 @@
-## CityCrafting Bot
+## Alpha-Fox Bot
 
-Discord Bot developed by me and active on [CityCrafting](https://discord.com/invite/5aHJvjJqN5)!
+Discord Bot developed by me and active on [Alpha-Fox](https://discord.com/invite/eFAWBzHwzT)!
 
 # Informations
 
